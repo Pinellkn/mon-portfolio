@@ -790,7 +790,7 @@ function Contact() {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "pinel-lokonon",
+      value: "Pinel LOKONON",
       href: "https://www.linkedin.com/in/pinel-lokonon-665610416",
     },
   ];
