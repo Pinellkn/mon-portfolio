@@ -421,7 +421,7 @@ function Hero() {
 
           <dl className="mt-12 grid max-w-md grid-cols-3 gap-6">
             {[
-              { k: "5+", v: "projets livrés" },
+              { k: "5+", v: "projets" },
               { k: "5", v: "portails AcadPay" },
               { k: "3+", v: "stacks maîtrisées" },
             ].map((s) => (
