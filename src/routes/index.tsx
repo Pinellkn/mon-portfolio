@@ -380,7 +380,7 @@ function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-orange" />
             </span>
-            Disponible pour un stage — juillet à octobre 2026
+            Disponible pour stage & emploi
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
@@ -449,7 +449,7 @@ function Hero() {
           <div className="absolute -bottom-4 -left-4 rounded-2xl border border-border bg-surface/90 px-4 py-3 backdrop-blur glass-card">
             <div className="flex items-center gap-2 text-xs">
               <MapPin className="h-3.5 w-3.5 text-orange" />
-              <span className="text-muted-foreground">Calavi · Parana, Bénin</span>
+              <span className="text-muted-foreground">Abomey-Calavi · Parana, Bénin</span>
             </div>
           </div>
         </div>
@@ -477,7 +477,7 @@ function About() {
         <div className="space-y-5 text-base text-muted-foreground md:text-lg">
           <p>
             Je m'appelle <span className="font-medium text-foreground">Pinel LOKONON</span>,
-            développeur Fullstack basé à Calavi (Bénin). Passé par <span className="text-foreground">HECM</span>{" "}
+            développeur Fullstack basé à Abomey-Calavi (Bénin). Passé par <span className="text-foreground">HECM(Haute École de Commerce et de Management) Calavi</span>{" "}
             puis <span className="text-foreground">Beta2 Afrique Technologies</span>, j'ai appris à
             construire des applications complètes de bout en bout — du modèle de données à
             l'expérience mobile.
@@ -489,14 +489,14 @@ function About() {
             J'aime autant sécuriser une auth OAuth / PKCE que dessiner un flux de paiement FedaPay clair.
           </p>
           <p>
-            Aujourd'hui, je cherche un <span className="text-foreground">stage de 3 à 4 mois</span> pour
+            Aujourd'hui, je suis à la recherche de<span className="text-foreground">stage & emploi</span> pour
             rejoindre une équipe qui livre — et apporter mes projets déjà en production comme point de
-            départ. Je reste aussi <span className="text-foreground">ouvert aux opportunités en CDD</span>.
+            départ.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Chip icon={Calendar}>Stage — Juillet → Octobre 2026</Chip>
-            <Chip icon={MapPin}>Calavi · Cotonou · Remote</Chip>
+            <Chip icon={Calendar}>Stage & Emploi</Chip>
+            <Chip icon={MapPin}>Abomey-Calavi · Cotonou · Remote</Chip>
             <Chip icon={CheckCircle2}>Ouvert au CDI après stage</Chip>
             <Chip icon={Briefcase}>Ouvert aux missions CDD</Chip>
           </div>
@@ -811,9 +811,9 @@ function Contact() {
               Un stage, un projet, une idée qui traîne ?
             </h3>
             <p className="mt-4 max-w-lg text-muted-foreground">
-              Je suis disponible pour un <span className="text-foreground">stage 3–4 mois</span>{" "}
-              (juillet → octobre 2026) et pour des missions freelance. Basé à{" "}
-              <span className="text-foreground">Calavi · Parana, Bénin</span> — ouvert au remote.
+              Je suis disponible pour <span className="text-foreground">stage & emploi</span>{" "}
+              et également pour des missions freelance. Basé à{" "}
+              <span className="text-foreground">Abomey-Calavi · Parana, Bénin</span> — ouvert au remote.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -870,7 +870,7 @@ function Footer() {
         <div>
           <p className="font-display text-sm font-semibold">Pinel LOKONON</p>
           <p className="mt-1 text-xs text-muted-foreground">
-            Développeur Fullstack Web & Mobile · Calavi, Bénin
+            Développeur Fullstack Web & Mobile · Abomey-Calavi, Bénin
           </p>
         </div>
         <div className="flex items-center gap-3">
