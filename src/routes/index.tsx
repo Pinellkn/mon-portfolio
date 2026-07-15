@@ -477,7 +477,7 @@ function About() {
         <div className="space-y-5 text-base text-muted-foreground md:text-lg">
           <p>
             Je m'appelle <span className="font-medium text-foreground">Pinel LOKONON</span>,
-            développeur Fullstack basé à Abomey-Calavi (Bénin). Passé par <span className="text-foreground">HECM(Haute École de Commerce et de Management) Calavi</span>{" "}
+            développeur Fullstack basé à Abomey-Calavi (Bénin). Passé par <span className="text-foreground">HECM (Haute École de Commerce et de Management) Calavi</span>{" "}
             puis <span className="text-foreground">Beta2 Afrique Technologies</span>, j'ai appris à
             construire des applications complètes de bout en bout — du modèle de données à
             l'expérience mobile.
