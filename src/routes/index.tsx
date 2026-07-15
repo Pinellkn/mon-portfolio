@@ -489,7 +489,7 @@ function About() {
             J'aime autant sécuriser une auth OAuth / PKCE que dessiner un flux de paiement FedaPay clair.
           </p>
           <p>
-            Aujourd'hui, je suis à la recherche de<span className="text-foreground">stage & emploi</span> pour
+            Aujourd'hui, je suis à la recherche de<span className="text-foreground"> stage & emploi</span> pour
             rejoindre une équipe qui livre — et apporter mes projets déjà en production comme point de
             départ.
           </p>
@@ -498,7 +498,7 @@ function About() {
             <Chip icon={Calendar}>Stage & Emploi</Chip>
             <Chip icon={MapPin}>Abomey-Calavi · Cotonou · Remote</Chip>
             <Chip icon={CheckCircle2}>Ouvert au CDI après stage</Chip>
-            <Chip icon={Briefcase}>Ouvert aux missions CDD</Chip>
+            <Chip icon={Briefcase}>Ouvert aux emplois CDD</Chip>
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4">
