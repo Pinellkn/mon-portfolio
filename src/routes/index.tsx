@@ -156,7 +156,7 @@ const projects: Project[] = [
     ],
     images: [beta21.url, beta22.url, beta23.url],
     liveUrl: "https://pinellkn.github.io/beta2/",
-    githubUrl: "https://pinellkn.github.io/beta2/",
+    githubUrl: "https://github.com/Pinellkn/mon-portfolio/",
     accent: "orange",
   },
   {
