@@ -156,11 +156,12 @@ const projects: Project[] = [
     tagline:
       "Application de mobile money inter-opérateurs : MTN, Moov et Celtiis dans une seule app.",
     status: "wip",
-    role: "Développeur Fullstack (web, mobile, API)",
+    role: "Développeur Fullstack — projet en équipe (web, mobile, API)",
     problem:
       "Au Bénin, envoyer de l'argent d'un opérateur à un autre reste compliqué et coûteux. FriPay relie les portefeuilles, affiche les frais avant validation et sécurise les transferts par QR code.",
     stack: ["Flutter / Dart","React / TanStack Start","Laravel (microservices)","PHP (API gateway)","MySQL","QR code signé"],
     highlights: [
+      "Projet réalisé en équipe (travail collaboratif sur le web, le mobile et l'API)",
       "App mobile Flutter portée à l'identique depuis la version web : transferts, recharge, retrait, factures, portefeuilles, historique, plaintes",
       "Backend en 3 microservices Laravel (utilisateurs, paiements, administration) derrière une API gateway",
       "Inscription avec OTP et code PIN, paiement de factures (eau, électricité, forfaits)",
@@ -180,6 +181,7 @@ const projects: Project[] = [
       "Un dirigeant rate des rendez-vous faute de rappels fiables. Klébé planifie les rendez-vous avec son équipe et envoie des rappels WhatsApp à J-1, le jour même et 15 minutes avant.",
     stack: ["Laravel","MySQL","REST API","React / TanStack Start","WhatsApp","Scheduler / Cron"],
     highlights: [
+      "Projet réalisé en équipe de 5 personnes : ma contribution porte sur le back-end",
       "Ma part : données et API des rendez-vous (modèle multi-tenant, endpoints REST)",
       "MySQL choisi pour les accès concurrents multi-tenant et le planificateur de rappels",
       "Interface : rendez-vous, messages, gestion d'équipe et suivi du quota de messages",
@@ -216,10 +218,10 @@ const projects: Project[] = [
     status: "live",
     role: "Développeur Fullstack — projet de fin d'études (HECM)",
     problem:
-      "Digitaliser tout le cycle académique et financier d'une université : inscriptions, scolarité, comptabilité, admin — pour étudiants, secrétaires, comptables, admins et superadmins.",
+      "Digitaliser tout le cycle académique et financier d'une université : inscriptions, scolarité, comptabilité, admin — pour étudiants, secrétaires, comptables, directeurs et superadmins.",
     stack: ["PHP natif", "MySQL", "Flutter / Dart", "REST API", "FedaPay"],
     highlights: [
-      "5 portails web dédiés (étudiant, secrétaire, comptable, admin, superadmin)",
+      "5 portails web dédiés (étudiant, secrétaire, comptable, directeur, superadmin)",
       "App mobile Flutter — paiement FedaPay via WebView, avatar builder, upload docs",
       "API REST + base MySQL structurée pour la scolarité complète",
       "Projet de soutenance validé — proposition de commercialisation à HECM",
