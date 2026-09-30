@@ -62,6 +62,34 @@ const cariba1 = { url: "/assets/projects/cool-cariba/cool-cariba-1.jpg" };
 const cariba2 = { url: "/assets/projects/cool-cariba/cool-cariba-2.jpg" };
 const cariba3 = { url: "/assets/projects/cool-cariba/cool-cariba-3.jpg" };
 
+const allopharm1 = { url: "/assets/projects/allopharm/allopharm-1.jpg" };
+const allopharm2 = { url: "/assets/projects/allopharm/allopharm-2.jpg" };
+const allopharm3 = { url: "/assets/projects/allopharm/allopharm-3.jpg" };
+const allopharm4 = { url: "/assets/projects/allopharm/allopharm-4.jpg" };
+
+const edugest1 = { url: "/assets/projects/edugest/edugest-1.jpg" };
+const edugest2 = { url: "/assets/projects/edugest/edugest-2.jpg" };
+const edugest3 = { url: "/assets/projects/edugest/edugest-3.jpg" };
+const edugest4 = { url: "/assets/projects/edugest/edugest-4.jpg" };
+const edugest5 = { url: "/assets/projects/edugest/edugest-5.jpg" };
+
+const fripay1 = { url: "/assets/projects/fripay/fripay-1.jpg" };
+const fripay2 = { url: "/assets/projects/fripay/fripay-2.jpg" };
+const fripay3 = { url: "/assets/projects/fripay/fripay-3.jpg" };
+const fripay4 = { url: "/assets/projects/fripay/fripay-4.jpg" };
+const fripay5 = { url: "/assets/projects/fripay/fripay-5.jpg" };
+const fripay6 = { url: "/assets/projects/fripay/fripay-6.jpg" };
+
+const klebe1 = { url: "/assets/projects/klebe/klebe-1.jpg" };
+const klebe2 = { url: "/assets/projects/klebe/klebe-2.jpg" };
+const klebe3 = { url: "/assets/projects/klebe/klebe-3.jpg" };
+const klebe4 = { url: "/assets/projects/klebe/klebe-4.jpg" };
+
+const lbc1 = { url: "/assets/projects/lbc/lbc-1.jpg" };
+const lbc2 = { url: "/assets/projects/lbc/lbc-2.jpg" };
+const lbc3 = { url: "/assets/projects/lbc/lbc-3.jpg" };
+const lbc4 = { url: "/assets/projects/lbc/lbc-4.jpg" };
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -82,6 +110,104 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    id: "allopharm",
+    name: "AllôPharm",
+    tagline:
+      "Plateforme de réservation de médicaments en pharmacie — « Un clic, un prix, un sachet prêt ».",
+    status: "wip",
+    role: "Développeur Fullstack",
+    problem:
+      "En zone rurale, les patients parcourent 20 à 40 km pour découvrir qu'un médicament est en rupture. AllôPharm permet de vérifier la disponibilité et le prix, puis de réserver avant de se déplacer.",
+    stack: ["React / TanStack Start","Tailwind CSS","Laravel","MySQL","REST API","Vercel / Render"],
+    highlights: [
+      "Recherche de médicaments tolérante aux fautes d'orthographe, avec prix et stock par officine",
+      "Réservation avec code de retrait / ticket, suivi par code ou par numéro de téléphone",
+      "Espaces officine par rôle : pharmacien, caissier et manager",
+      "Backend Laravel : import de stock, expiration automatique des réservations, notifications et journal d'activité",
+    ],
+    images: [allopharm1.url, allopharm2.url, allopharm3.url, allopharm4.url],
+    githubUrl: "https://github.com/Pinellkn/allopharm",
+    accent: "brand",
+  },
+  {
+    id: "edugest",
+    name: "EduGest-Plus",
+    tagline:
+      "Application de gestion scolaire complète — de l'inscription au bulletin trimestriel.",
+    status: "wip",
+    role: "Développeur Fullstack",
+    problem:
+      "Un établissement secondaire (6ème → Terminale) gérait inscriptions, notes, paiements et bulletins à la main. EduGest-Plus centralise tout et calcule automatiquement moyennes et classements.",
+    stack: ["React / TanStack Start","Tailwind CSS","Laravel 12","Laravel Sanctum","MySQL","REST API"],
+    highlights: [
+      "5 rôles : secrétariat, comptabilité, enseignants, direction et parents",
+      "Saisie des notes avec moyennes, rangs de classe et rangs de promotion recalculés à chaque saisie",
+      "Comptabilité par tranches, génération de reçus et suivi du recouvrement",
+      "Bulletins trimestriels et espace parent sécurisé par code d'accès",
+      "Fonctionne aussi hors connexion, sur le poste de l'école",
+    ],
+    images: [edugest1.url, edugest2.url, edugest3.url, edugest4.url, edugest5.url],
+    accent: "orange",
+  },
+  {
+    id: "fripay",
+    name: "FriPay",
+    tagline:
+      "Application de mobile money inter-opérateurs : MTN, Moov et Celtiis dans une seule app.",
+    status: "wip",
+    role: "Développeur Fullstack (web, mobile, API)",
+    problem:
+      "Au Bénin, envoyer de l'argent d'un opérateur à un autre reste compliqué et coûteux. FriPay relie les portefeuilles, affiche les frais avant validation et sécurise les transferts par QR code.",
+    stack: ["Flutter / Dart","React / TanStack Start","Laravel (microservices)","PHP (API gateway)","MySQL","QR code signé"],
+    highlights: [
+      "App mobile Flutter portée à l'identique depuis la version web : transferts, recharge, retrait, factures, portefeuilles, historique, plaintes",
+      "Backend en 3 microservices Laravel (utilisateurs, paiements, administration) derrière une API gateway",
+      "Inscription avec OTP et code PIN, paiement de factures (eau, électricité, forfaits)",
+      "Audit de l'API réalisé et corrigé, analyse Flutter sans aucune erreur",
+    ],
+    images: [fripay1.url, fripay2.url, fripay3.url, fripay4.url, fripay5.url, fripay6.url],
+    accent: "brand",
+  },
+  {
+    id: "klebe",
+    name: "Klébé Plan Pro",
+    tagline:
+      "Assistant WhatsApp qui gère les rendez-vous d'un DG et envoie les rappels automatiquement.",
+    status: "wip",
+    role: "Développeur Backend — projet d'équipe (5 personnes)",
+    problem:
+      "Un dirigeant rate des rendez-vous faute de rappels fiables. Klébé planifie les rendez-vous avec son équipe et envoie des rappels WhatsApp à J-1, le jour même et 15 minutes avant.",
+    stack: ["Laravel","MySQL","REST API","React / TanStack Start","WhatsApp","Scheduler / Cron"],
+    highlights: [
+      "Ma part : données et API des rendez-vous (modèle multi-tenant, endpoints REST)",
+      "MySQL choisi pour les accès concurrents multi-tenant et le planificateur de rappels",
+      "Interface : rendez-vous, messages, gestion d'équipe et suivi du quota de messages",
+      "Travail en sprint avec 2 développeurs front et un collègue back-end",
+    ],
+    images: [klebe1.url, klebe2.url, klebe3.url, klebe4.url],
+    accent: "orange",
+  },
+  {
+    id: "lbc",
+    name: "LBC — Tout le Bénin en un clic",
+    tagline:
+      "Plateforme numérique du Bénin : entreprises, emplois & stages, actualités et démarches utiles.",
+    status: "live",
+    role: "Développeur Fullstack (web + mobile)",
+    problem:
+      "Les informations locales (entreprises, offres, démarches administratives) sont dispersées. LBC les regroupe au même endroit, avec recherche, filtres et assistant IA.",
+    stack: ["React","Vite","TanStack Router","Tailwind CSS","Flutter / Dart","Vercel"],
+    highlights: [
+      "Annuaire des entreprises avec filtres par secteur, commune et statut de vérification",
+      "Offres d'emploi, stages et alternances filtrables par type et niveau d'études",
+      "Fil d'actualités multi-sources et guide des démarches du quotidien",
+      "Site déployé sur Vercel + application mobile Flutter associée",
+    ],
+    images: [lbc1.url, lbc2.url, lbc3.url, lbc4.url],
+    liveUrl: "https://lbclboncoin.vercel.app",
+    accent: "brand",
+  },
   {
     id: "acadpay",
     name: "AcadPay",
