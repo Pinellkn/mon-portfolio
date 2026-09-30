@@ -34,6 +34,7 @@ import { useTheme } from "@/hooks/use-theme";
 const pinel1 = { url: "/assets/me/pinel-1.jpg" };
 const pinel2 = { url: "/assets/me/pinel-3.jpg" };
 const cvEmploi = { url: "/assets/CV_Pinel_Emploi.pdf" };
+const cvStage = { url: "/assets/CV_Pinel_Stage.pdf" };
 
 const acadpay1 = { url: "/assets/projects/acadpay/acadpay-1.png" };
 const acadpay2 = { url: "/assets/projects/acadpay/acadpay-2.png" };
@@ -379,7 +380,7 @@ function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-orange" />
             </span>
-            Développeur Fullstack disponible pour missions Freelance & Emploi
+            Développeur Fullstack disponible : Freelance, Emploi & Stage professionnel
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
@@ -489,16 +490,17 @@ function About() {
           </p>
           <p>
             Aujourd'hui, je suis{" "}
-            <span className="text-foreground">développeur Fullstack disponible pour des missions freelance & emploi</span>{" "}
+            <span className="text-foreground">développeur Fullstack disponible pour des missions freelance, un emploi ou un stage professionnel</span>{" "}
             — prêt à rejoindre une équipe qui livre, ou à apporter mes projets déjà en
             production comme point de départ à une mission.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Chip icon={Calendar}>Freelance & Emploi</Chip>
+            <Chip icon={Calendar}>Freelance, Emploi & Stage</Chip>
             <Chip icon={MapPin}>Abomey-Calavi · Cotonou · Remote</Chip>
             <Chip icon={CheckCircle2}>Ouvert aux missions freelance</Chip>
             <Chip icon={Briefcase}>Ouvert aux emplois CDD</Chip>
+            <Chip icon={GraduationCap}>Ouvert aux stages professionnels</Chip>
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4">
@@ -508,7 +510,15 @@ function About() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-elevated"
             >
-              <Eye className="h-4 w-4" /> Voir mon CV
+              <Eye className="h-4 w-4" /> Voir mon CV Emploi
+            </a>
+            <a
+              href={cvStage.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-elevated"
+            >
+              <Eye className="h-4 w-4" /> Voir mon CV Stage
             </a>
           </div>
         </div>
@@ -803,7 +813,7 @@ function Contact() {
               Une mission, un projet, une idée qui traîne ?
             </h3>
             <p className="mt-4 max-w-lg text-muted-foreground">
-              Je suis <span className="text-foreground">développeur Fullstack disponible pour des missions freelance & emploi</span>. Basé à{" "}
+              Je suis <span className="text-foreground">développeur Fullstack disponible pour des missions freelance, un emploi ou un stage professionnel</span>. Basé à{" "}
               <span className="text-foreground">Abomey-Calavi · Parana, Bénin</span> — ouvert au remote.
             </p>
 
