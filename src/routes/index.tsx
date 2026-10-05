@@ -27,6 +27,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Maximize2,
+  Star,
 } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 
@@ -94,6 +95,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+type ProjectCategory = "Web" | "Mobile" | "Backend";
+
 type Project = {
   id: string;
   name: string;
@@ -107,11 +110,14 @@ type Project = {
   liveUrl?: string;
   githubUrl?: string;
   accent: "brand" | "orange";
+  category?: ProjectCategory[];
+  metrics?: { k: string; v: string }[];
 };
 
 const projects: Project[] = [
   {
     id: "allopharm",
+    category: ["Web","Backend"],
     name: "AllôPharm",
     tagline:
       "Plateforme de réservation de médicaments en pharmacie — « Un clic, un prix, un sachet prêt ».",
@@ -132,6 +138,7 @@ const projects: Project[] = [
   },
   {
     id: "edugest",
+    category: ["Web","Backend"],
     name: "EduGest-Plus",
     tagline:
       "Application de gestion scolaire complète — de l'inscription au bulletin trimestriel.",
@@ -152,6 +159,7 @@ const projects: Project[] = [
   },
   {
     id: "fripay",
+    category: ["Mobile","Web","Backend"],
     name: "FriPay",
     tagline:
       "Application de mobile money inter-opérateurs : MTN, Moov et Celtiis dans une seule app.",
@@ -172,6 +180,7 @@ const projects: Project[] = [
   },
   {
     id: "klebe",
+    category: ["Backend","Web"],
     name: "Klébé Plan Pro",
     tagline:
       "Assistant WhatsApp qui gère les rendez-vous d'un DG et envoie les rappels automatiquement.",
@@ -192,6 +201,7 @@ const projects: Project[] = [
   },
   {
     id: "lbc",
+    category: ["Web","Mobile"],
     name: "LBC — Tout le Bénin en un clic",
     tagline:
       "Plateforme numérique du Bénin : entreprises, emplois & stages, actualités et démarches utiles.",
@@ -212,6 +222,13 @@ const projects: Project[] = [
   },
   {
     id: "acadpay",
+    category: ["Web", "Mobile", "Backend"],
+    metrics: [
+      { k: "5", v: "portails web dédiés" },
+      { k: "1", v: "app mobile Flutter" },
+      { k: "3", v: "opérateurs de paiement mobile" },
+      { k: "✓", v: "soutenance validée (HECM)" },
+    ],
     name: "AcadPay",
     tagline:
       "Plateforme complète de gestion académique — 5 portails web, app mobile Flutter et paiements intégrés.",
@@ -231,6 +248,7 @@ const projects: Project[] = [
   },
   {
     id: "veloce",
+    category: ["Web","Backend"],
     name: "Veloce / Vogue Motors",
     tagline:
       "Plateforme de vente de véhicules avec authentification sécurisée et paiement en ligne.",
@@ -251,6 +269,7 @@ const projects: Project[] = [
   },
   {
     id: "ong",
+    category: ["Web","Backend"],
     name: "ONG Nature & Compassion",
     tagline: "Site vitrine solidaire avec dons en ligne pour un client réel.",
     status: "wip",
@@ -269,6 +288,7 @@ const projects: Project[] = [
   },
   {
     id: "beta2",
+    category: ["Web"],
     name: "Beta2 Afrique Technologies",
     tagline: "Site vitrine institutionnel pour un centre de formation en informatique & électronique.",
     status: "live",
@@ -289,6 +309,7 @@ const projects: Project[] = [
   },
   {
     id: "cool-cariba",
+    category: ["Web","Backend"],
     name: "Cool Cariba",
     tagline: "Refonte d'un site restaurant avec menu réel et interface soignée.",
     status: "wip",
@@ -310,17 +331,17 @@ const skillGroups = [
   {
     icon: Server,
     title: "Backend",
-    items: ["PHP natif", "Laravel", "Node.js", "API REST", "Auth OAuth / PKCE"],
+    items: ["PHP natif", "Laravel (Sanctum, microservices)", "Node.js", "API REST", "Auth OAuth / PKCE", "OTP / PIN"],
   },
   {
     icon: Code2,
     title: "Frontend",
-    items: ["React", "TypeScript", "HTML5 / CSS3", "TailwindCSS", "JavaScript ES6+"],
+    items: ["React", "TanStack Start / Router", "TypeScript", "HTML5 / CSS3", "TailwindCSS", "JavaScript ES6+"],
   },
   {
     icon: Smartphone,
     title: "Mobile",
-    items: ["Flutter / Dart", "WebView natif", "Intégration paiements mobiles"],
+    items: ["Flutter / Dart", "WebView natif", "Intégration paiements mobiles", "Apps connectées à une API REST", "QR code"],
   },
   {
     icon: Database,
@@ -330,7 +351,7 @@ const skillGroups = [
   {
     icon: Wrench,
     title: "Outils & Intégrations",
-    items: ["Git & GitHub", "FedaPay", "Google OAuth", "Render", "VS Code"],
+    items: ["Git & GitHub", "FedaPay", "Google OAuth", "Vercel", "Render", "VS Code"],
   },
   {
     icon: Sparkles,
@@ -340,6 +361,17 @@ const skillGroups = [
 ];
 
 const experiences = [
+  {
+    role: "Développeur Fullstack & Backend",
+    org: "Projets 2026 — FriPay, AllôPharm, EduGest-Plus, LBC, Klébé Plan Pro",
+    period: "2026 — présent",
+    icon: Code2,
+    points: [
+      "Apps mobiles Flutter et microservices Laravel (paiement mobile, API gateway, OTP / PIN)",
+      "Plateformes locales : santé (réservation en pharmacie), éducation (notes et bulletins), emploi",
+      "Travail en équipe sur FriPay et Klébé Plan Pro (équipe de 5 ; ma part : données et API des rendez-vous)",
+    ],
+  },
   {
     role: "Stagiaire Développeur",
     org: "Beta2 Afrique Technologies",
@@ -540,18 +572,18 @@ function Hero() {
               <Eye className="h-4 w-4" /> Voir le CV
             </a>
             <a
-              href="#contact"
+              href="#acadpay"
               className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm text-muted-foreground hover:text-foreground"
             >
-              ou me contacter →
+              Découvrir AcadPay, mon projet phare →
             </a>
           </div>
 
           <dl className="mt-12 grid max-w-md grid-cols-3 gap-6">
             {[
-              { k: "5+", v: "projets" },
+              { k: `${projects.length}+`, v: "projets réalisés" },
               { k: "5", v: "portails AcadPay" },
-              { k: "3+", v: "stacks maîtrisées" },
+              { k: "3", v: "apps mobiles Flutter" },
             ].map((s) => (
               <div key={s.v}>
                 <dt className="font-display text-3xl font-bold text-gradient-brand">{s.k}</dt>
@@ -577,7 +609,7 @@ function Hero() {
           <div className="absolute -bottom-4 -left-4 rounded-2xl border border-border bg-surface/90 px-4 py-3 backdrop-blur glass-card">
             <div className="flex items-center gap-2 text-xs">
               <MapPin className="h-3.5 w-3.5 text-orange" />
-              <span className="text-muted-foreground">Abomey-Calavi · Parana, Bénin</span>
+              <span className="text-muted-foreground">Abomey-Calavi · Maria-Gléta, Bénin</span>
             </div>
           </div>
         </div>
@@ -694,44 +726,247 @@ function Skills() {
 }
 
 /* ---------------- PROJECTS ---------------- */
+const FILTERS = ["Tous", "Web", "Mobile", "Backend"] as const;
+type ProjectFilter = (typeof FILTERS)[number];
+
 function Projects() {
+  const featured = projects.find((p) => p.id === "acadpay") ?? projects[0];
+  const others = projects.filter((p) => p.id !== featured.id);
+  const [filter, setFilter] = useState<ProjectFilter>("Tous");
+  const [openId, setOpenId] = useState<string | null>(null);
+  const visible = others.filter(
+    (p) => filter === "Tous" || (p.category ?? ["Web"]).includes(filter),
+  );
+  const opened = projects.find((p) => p.id === openId) ?? null;
+
   return (
     <Section
       id="projects"
       eyebrow="Projets"
       title="Le cœur du portfolio."
-      subtitle="Cinq projets réels — dont un projet phare de fin d'études, deux missions client et des sites en production."
+      subtitle={`${projects.length} projets réels : un projet phare de fin d'études, des plateformes locales (santé, éducation, emploi, paiement), des missions client et des sites en production.`}
     >
-      <div className="space-y-16 md:space-y-24">
-        {projects.map((p, i) => (
-          <ProjectCard key={p.id} project={p} index={i} />
-        ))}
+      <FeaturedProject project={featured} />
+
+      <div className="mt-20 md:mt-28">
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h3 className="font-display text-2xl font-bold md:text-3xl">Autres projets</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Cliquez sur un projet pour voir les captures, la stack et les détails.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filtrer les projets">
+            {FILTERS.map((f) => (
+              <button
+                key={f}
+                type="button"
+                onClick={() => setFilter(f)}
+                aria-pressed={filter === f}
+                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+                  filter === f
+                    ? "border-brand bg-brand text-brand-foreground"
+                    : "border-border bg-surface/60 text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {visible.map((p) => (
+            <ProjectTile key={p.id} project={p} onOpen={() => setOpenId(p.id)} />
+          ))}
+        </div>
+        {visible.length === 0 && (
+          <p className="mt-8 text-sm text-muted-foreground">Aucun projet dans cette catégorie.</p>
+        )}
       </div>
+
+      {opened && <ProjectDialog project={opened} onClose={() => setOpenId(null)} />}
     </Section>
   );
 }
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const reversed = index % 2 === 1;
+function StatusBadge({ status, className = "" }: { status?: Project["status"]; className?: string }) {
+  if (status === "wip") {
+    return (
+      <span
+        className={`rounded-full border border-orange/40 bg-background/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-orange backdrop-blur ${className}`}
+      >
+        🚧 En développement
+      </span>
+    );
+  }
+  if (status === "live") {
+    return (
+      <span
+        className={`rounded-full border border-brand/40 bg-background/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-brand-glow backdrop-blur ${className}`}
+      >
+        ● En production
+      </span>
+    );
+  }
+  return null;
+}
+
+function FeaturedProject({ project }: { project: Project }) {
+  return (
+    <div
+      id="acadpay"
+      className="relative scroll-mt-28 overflow-hidden rounded-[2rem] border border-brand/40 bg-surface/40 p-5 backdrop-blur glow-brand md:p-10"
+    >
+      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/20 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-orange/20 blur-3xl" />
+      <div className="relative">
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand to-orange px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-foreground">
+          <Star className="h-3.5 w-3.5" /> Projet phare
+        </div>
+        <ProjectCard project={project} variant="featured" />
+        {project.metrics && project.metrics.length > 0 && (
+          <dl className="mt-10 grid grid-cols-2 gap-4 border-t border-border pt-8 md:grid-cols-4">
+            {project.metrics.map((m) => (
+              <div key={m.v} className="rounded-2xl border border-border bg-background/50 p-4">
+                <dt className="font-display text-3xl font-bold text-gradient-brand">{m.k}</dt>
+                <dd className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                  {m.v}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ProjectTile({ project, onOpen }: { project: Project; onOpen: () => void }) {
+  const cover = project.images[0];
+  const extra = project.stack.length - 4;
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      aria-label={`Voir le projet ${project.name}`}
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/60 text-left backdrop-blur transition-all hover:-translate-y-1 hover:border-brand/50 hover:shadow-xl"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-surface">
+        {cover ? (
+          <img
+            src={cover}
+            alt={`${project.name} — aperçu`}
+            loading="lazy"
+            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="grid h-full place-items-center text-muted-foreground">
+            <Wrench className="h-6 w-6" />
+          </div>
+        )}
+        <StatusBadge status={project.status} className="absolute left-3 top-3" />
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-display text-xl font-bold leading-tight">{project.name}</h3>
+        <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{project.tagline}</p>
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {project.stack.slice(0, 4).map((s) => (
+            <span
+              key={s}
+              className="rounded-md border border-border bg-background/50 px-2 py-0.5 text-[11px] text-muted-foreground"
+            >
+              {s}
+            </span>
+          ))}
+          {extra > 0 && (
+            <span className="rounded-md px-2 py-0.5 text-[11px] text-muted-foreground">+{extra}</span>
+          )}
+        </div>
+        <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-brand-glow">
+          Voir le projet
+          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </span>
+      </div>
+    </button>
+  );
+}
+
+function ProjectDialog({ project, onClose }: { project: Project; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !document.querySelector("[data-lightbox]")) onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[90] overflow-y-auto bg-background/90 backdrop-blur-sm animate-fade-up"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={project.name}
+    >
+      <div className="mx-auto my-6 max-w-6xl px-4 md:my-10 md:px-6">
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="relative rounded-3xl border border-border bg-background p-5 shadow-2xl md:p-10"
+        >
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Fermer"
+            className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full border border-border bg-surface/80 text-foreground backdrop-blur transition-colors hover:bg-surface"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <ProjectCard project={project} variant="dialog" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ProjectCard({
+  project,
+  variant = "dialog",
+}: {
+  project: Project;
+  variant?: "featured" | "dialog";
+}) {
   const accentClass = project.accent === "orange" ? "from-orange/30" : "from-brand/30";
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const featured = variant === "featured";
+  const thumbs = project.images.slice(1);
+  const shownThumbs = thumbs.slice(0, 4);
+  const hidden = thumbs.length - shownThumbs.length;
+
   return (
-    <article className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+    <article className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-14">
       {/* Gallery */}
-      <div className={`relative ${reversed ? "lg:order-2" : ""}`}>
-        <div className={`absolute -inset-6 rounded-[2rem] bg-gradient-to-br ${accentClass} via-transparent to-transparent blur-3xl`} />
+      <div className="relative">
+        <div
+          className={`absolute -inset-6 rounded-[2rem] bg-gradient-to-br ${accentClass} via-transparent to-transparent blur-3xl`}
+        />
         {project.images.length > 0 ? (
           <div className="relative">
             <button
               type="button"
               onClick={() => setLightboxIndex(0)}
-              aria-label={`Agrandir la photo — ${project.name}`}
+              aria-label={`Agrandir la capture — ${project.name}`}
               className="group relative block w-full overflow-hidden rounded-2xl border border-border"
             >
               <img
                 src={project.images[0]}
                 alt={`${project.name} — aperçu principal`}
-                className="aspect-[16/10] w-full object-cover"
+                className="aspect-[16/10] w-full object-cover object-top"
                 loading="lazy"
               />
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background/0 opacity-0 transition-opacity group-hover:bg-background/30 group-hover:opacity-100">
@@ -740,25 +975,31 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 </span>
               </div>
             </button>
-            {project.images.length > 1 && (
+            {shownThumbs.length > 0 && (
               <div className="mt-3 grid grid-cols-4 gap-3">
-                {project.images.slice(1, 5).map((src, i) => (
+                {shownThumbs.map((src, i) => (
                   <button
                     type="button"
-                    key={i}
+                    key={src}
                     onClick={() => setLightboxIndex(i + 1)}
-                    aria-label={`Agrandir la photo ${i + 2} — ${project.name}`}
+                    aria-label={`Agrandir la capture ${i + 2} — ${project.name}`}
                     className="group relative overflow-hidden rounded-lg border border-border"
                   >
                     <img
                       src={src}
                       alt={`${project.name} — capture ${i + 2}`}
-                      className="aspect-[4/3] w-full object-cover transition-transform group-hover:scale-105"
+                      className="aspect-[4/3] w-full object-cover object-top transition-transform group-hover:scale-105"
                       loading="lazy"
                     />
-                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background/0 opacity-0 transition-opacity group-hover:bg-background/30 group-hover:opacity-100">
-                      <Maximize2 className="h-4 w-4 text-foreground" />
-                    </div>
+                    {hidden > 0 && i === shownThumbs.length - 1 ? (
+                      <div className="absolute inset-0 grid place-items-center bg-background/70 font-display text-lg font-bold text-foreground backdrop-blur-[2px]">
+                        +{hidden + 1}
+                      </div>
+                    ) : (
+                      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background/0 opacity-0 transition-opacity group-hover:bg-background/30 group-hover:opacity-100">
+                        <Maximize2 className="h-4 w-4 text-foreground" />
+                      </div>
+                    )}
                   </button>
                 ))}
               </div>
@@ -787,23 +1028,20 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </div>
 
       {/* Content */}
-      <div className={`flex flex-col justify-center ${reversed ? "lg:order-1" : ""}`}>
+      <div className="flex flex-col justify-center">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="font-display text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            0{index + 1} — {project.role?.split(" — ")[0] ?? "Projet"}
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            {project.role ?? "Projet"}
           </span>
-          {project.status === "wip" && (
-            <span className="rounded-full border border-orange/40 bg-orange/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-orange">
-              🚧 En développement
-            </span>
-          )}
-          {project.status === "live" && (
-            <span className="rounded-full border border-brand/40 bg-brand/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-glow">
-              ● En production
-            </span>
-          )}
+          <StatusBadge status={project.status} />
         </div>
-        <h3 className="mt-2 font-display text-3xl font-bold md:text-4xl">{project.name}</h3>
+        <h3
+          className={`mt-2 font-display font-bold ${
+            featured ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl"
+          }`}
+        >
+          {project.name}
+        </h3>
         <p className="mt-3 text-lg text-muted-foreground">{project.tagline}</p>
 
         <div className="mt-6 rounded-xl border border-border bg-surface/50 p-4 backdrop-blur">
@@ -822,15 +1060,20 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           ))}
         </ul>
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.stack.map((s) => (
-            <span
-              key={s}
-              className="rounded-md border border-border bg-background/50 px-2.5 py-1 text-xs text-muted-foreground"
-            >
-              {s}
-            </span>
-          ))}
+        <div className="mt-6">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Stack & compétences
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {project.stack.map((s) => (
+              <span
+                key={s}
+                className="rounded-md border border-border bg-background/50 px-2.5 py-1 text-xs text-muted-foreground"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
         </div>
 
         {(project.liveUrl || project.githubUrl) && (
@@ -942,7 +1185,7 @@ function Contact() {
             </h3>
             <p className="mt-4 max-w-lg text-muted-foreground">
               Je suis <span className="text-foreground">développeur Fullstack disponible pour des missions freelance, un emploi ou un stage professionnel</span>. Basé à{" "}
-              <span className="text-foreground">Abomey-Calavi · Parana, Bénin</span> — ouvert au remote.
+              <span className="text-foreground">Abomey-Calavi · Maria-Gléta, Bénin</span> — ouvert au remote.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -1067,7 +1310,7 @@ function ImageLightbox({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 p-6 backdrop-blur-sm animate-fade-up"
+      data-lightbox className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 p-6 backdrop-blur-sm animate-fade-up"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
