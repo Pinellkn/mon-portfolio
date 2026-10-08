@@ -108,7 +108,6 @@ type Project = {
   highlights: string[];
   images: string[];
   liveUrl?: string;
-  githubUrl?: string;
   accent: "brand" | "orange";
   category?: ProjectCategory[];
   metrics?: { k: string; v: string }[];
@@ -133,7 +132,7 @@ const projects: Project[] = [
       "Backend Laravel : import de stock, expiration automatique des réservations, notifications et journal d'activité",
     ],
     images: [allopharm1.url, allopharm2.url, allopharm3.url, allopharm4.url],
-    githubUrl: "https://github.com/Pinellkn/allopharm",
+    liveUrl: "https://allopharm.vercel.app",
     accent: "brand",
   },
   {
@@ -304,7 +303,6 @@ const projects: Project[] = [
     ],
     images: [beta21.url, beta22.url, beta23.url],
     liveUrl: "https://pinellkn.github.io/beta2/",
-    githubUrl: "https://github.com/Pinellkn/mon-portfolio/",
     accent: "orange",
   },
   {
@@ -1076,28 +1074,16 @@ function ProjectCard({
           </div>
         </div>
 
-        {(project.liveUrl || project.githubUrl) && (
+        {project.liveUrl && (
           <div className="mt-6 flex flex-wrap gap-3">
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
-              >
-                Voir le live <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-            )}
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-4 py-2 text-sm font-medium text-foreground hover:bg-surface"
-              >
-                <Github className="h-3.5 w-3.5" /> Source
-              </a>
-            )}
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+            >
+              Voir le site <ExternalLink className="h-3.5 w-3.5" />
+            </a>
           </div>
         )}
       </div>
