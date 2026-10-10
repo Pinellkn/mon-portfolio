@@ -243,6 +243,7 @@ const projects: Project[] = [
       "Projet de soutenance validé — proposition de commercialisation à HECM",
     ],
     images: [acadpay1.url, acadpay2.url, acadpay3.url, acadpay4.url, acadpay5.url],
+    liveUrl: "https://acadpay-xu70.onrender.com",
     accent: "brand",
   },
   {
