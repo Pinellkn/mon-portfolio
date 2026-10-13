@@ -34,8 +34,7 @@ import { useTheme } from "@/hooks/use-theme";
 // Assets servis depuis /public/assets — fonctionnent aussi hors Lovable (export/téléchargement).
 const pinel1 = { url: "/assets/me/pinel-1.jpg" };
 const pinel2 = { url: "/assets/me/pinel-3.jpg" };
-const cvEmploi = { url: "/assets/CV_Pinel_Emploi.pdf" };
-const cvStage = { url: "/assets/CV_Pinel_Stage.pdf" };
+const cv = { url: "/assets/CV_Pinel_LOKONON.pdf" };
 
 const acadpay1 = { url: "/assets/projects/acadpay/acadpay-1.png" };
 const acadpay2 = { url: "/assets/projects/acadpay/acadpay-2.png" };
@@ -355,11 +354,31 @@ const skillGroups = [
   {
     icon: Sparkles,
     title: "Soft skills",
-    items: ["Gestion client", "Livraison en autonomie", "Travail en équipe", "Rigueur produit"],
+    items: ["Gestion client", "Livraison en autonomie", "Travail en équipe", "Transmission des connaissances", "Rigueur produit"],
   },
 ];
 
 const experiences = [
+  {
+    role: "Développeur — stage en équipe à distance",
+    org: "Benidev Studio",
+    period: "Juillet 2026 — aujourd'hui",
+    icon: Briefcase,
+    points: [
+      "Projets en équipe : Fripay, Klébé, Pointage…",
+      "Développement web et mobile ; API et données",
+    ],
+  },
+  {
+    role: "Enseignant en développement web et mobile",
+    org: "Beta2 Afrique Technologie — stage professionnel",
+    period: "17 août — 17 octobre 2026",
+    icon: GraduationCap,
+    points: [
+      "Cours auprès des apprenants du centre de formation",
+      "Explications concrètes et accompagnement des apprenants",
+    ],
+  },
   {
     role: "Développeur Fullstack & Backend",
     org: "Projets 2026 — FriPay, AllôPharm, EduGest-Plus, LBC, Klébé Plan Pro",
@@ -373,11 +392,11 @@ const experiences = [
   },
   {
     role: "Stagiaire Développeur",
-    org: "Beta2 Afrique Technologies",
-    period: "Stage — 2025",
+    org: "Beta2 Afrique Technologie",
+    period: "Févr. — mai 2026 · Juin — août 2025",
     icon: Briefcase,
     points: [
-      "Développement du site vitrine institutionnel (HTML/CSS/JS)",
+      "Applications web, bases de données et site institutionnel (HTML/CSS/JS)",
       "Design cohérent blanc / bleu / orange, mobile-first",
       "Mise en ligne et itérations avec l'équipe pédagogique",
     ],
@@ -563,7 +582,7 @@ function Hero() {
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
-              href={cvEmploi.url}
+              href={cv.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 font-medium text-foreground backdrop-blur transition-colors hover:bg-surface"
@@ -664,20 +683,12 @@ function About() {
 
           <div className="flex flex-wrap gap-3 pt-4">
             <a
-              href={cvEmploi.url}
+              href={cv.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-elevated"
             >
-              <Eye className="h-4 w-4" /> Voir mon CV Emploi
-            </a>
-            <a
-              href={cvStage.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-elevated"
-            >
-              <Eye className="h-4 w-4" /> Voir mon CV Stage
+              <Eye className="h-4 w-4" /> Voir mon CV
             </a>
           </div>
         </div>
