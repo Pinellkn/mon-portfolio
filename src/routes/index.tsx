@@ -1143,8 +1143,8 @@ function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "lokononpinel@gmail.com",
-      href: "mailto:lokononpinel@gmail.com",
+      value: "lokononpinel18@gmail.com",
+      href: "mailto:lokononpinel18@gmail.com",
     },
     {
       icon: MessageCircle,
@@ -1188,7 +1188,7 @@ function Contact() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="mailto:lokononpinel@gmail.com"
+                href="mailto:lokononpinel18@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 font-medium text-brand-foreground glow-brand transition-transform hover:-translate-y-0.5"
               >
                 <Mail className="h-4 w-4" /> Envoyer un email
@@ -1263,7 +1263,7 @@ function Footer() {
             <Github className="h-4 w-4" />
           </a>
           <a
-            href="mailto:lokononpinel@gmail.com"
+            href="mailto:lokononpinel18@gmail.com"
             aria-label="Email"
             className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface/60 text-muted-foreground transition-colors hover:text-foreground"
           >
