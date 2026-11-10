@@ -33,7 +33,7 @@ import { useTheme } from "@/hooks/use-theme";
 
 // Assets servis depuis /public/assets — fonctionnent aussi hors Lovable (export/téléchargement).
 const pinel1 = { url: "/assets/me/pinel-1.jpg" };
-const pinel2 = { url: "/assets/me/pinel-3.jpg" };
+const pinel2 = { url: "/assets/me/pinel-costume.jpg" };
 const cv = { url: "/assets/CV_Pinel_LOKONON_2026.pdf" };
 
 const acadpay1 = { url: "/assets/projects/acadpay/acadpay-1.png" };
